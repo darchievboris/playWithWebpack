@@ -4,6 +4,8 @@ import webpack, {Configuration} from "webpack";
 import {BuildOptions} from "./types/types";
 import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin"
+import * as punycode from "punycode";
 
 
 
@@ -22,6 +24,7 @@ export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
         plugins.push(new webpack.ProgressPlugin)
         /* Выносит провкрку типов в отдельный процесс: не нагружая сборку */
         plugins.push(new ForkTsCheckerWebpackPlugin())
+        plugins.push(new ReactRefreshWebpackPlugin())
     }
 
     if (options.mode === "production") {
