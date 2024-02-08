@@ -7,6 +7,8 @@
     "build:dev": "webpack -- --env mode=development",
     "build:prod": "webpack -- --env mode=production",
     "build:prodAn": "webpack -- --env mode=production analyzer=true",
+    "build:mobile": "webpack -- --env mode=production platform=mobile",
+    "build:desktop": "webpack -- --env mode=production platrform=desktop",
     "start": "webpack serve"
   },
   "keywords": [],

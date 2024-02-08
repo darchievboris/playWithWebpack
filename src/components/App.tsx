@@ -9,8 +9,11 @@ import ImgSvg from "@/assets/img4.svg";
 export const App = () => {
     const [counter, setCounter] = useState<number>(0);
     const increment = () => setCounter(prev => prev + 1)
+    if(__PLATFORM__==='desktop') return <div>Is desktop platform</div>
+    if(__PLATFORM__==='mobile') return <div>Is mobile platform</div>
     return (
         <div>
+            <div>Platform = {__PLATFORM__}</div>
             <div><img width={100} height={100} src={imgPng}/></div>
             <div><img width={100} height={100} src={imgJpg}/></div>
             <div><ImgSvg style={{color:'green'}} width={50} height={50} fill={'red'}/></div>
