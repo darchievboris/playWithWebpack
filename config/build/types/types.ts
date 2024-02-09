@@ -3,6 +3,7 @@ export type BuildPlatform = "mobile" | "desktop"
 export interface BuildPath{
     entry:string;
     output:string;
+    public:string;
     html:string;
     src:string
 }
